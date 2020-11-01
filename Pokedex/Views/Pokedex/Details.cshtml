@@ -1,0 +1,43 @@
+﻿@model Pokemon
+<table class="table">
+    <tr>
+        <td>Image</td>
+        <td><img src="~/images/pokemon/@(Model.Id).png" /></td>
+    </tr>
+    <tr>
+        <td>Name</td>
+        <td>@Model.Name.English</td>
+    </tr>
+    <tr>
+        <td>Type</td>
+        <td>
+            <ul>
+                @foreach (var type in Model.Type)
+                {
+                    <li>@type</li>
+                }
+            </ul>
+        </td>
+    </tr>
+    <tr>
+        <td>HP</td>
+        <td>@Model.Base.Hp</td>
+    </tr>
+    <tr>
+        <td>Attack</td>
+        <td>@Model.Base.Attack</td>
+    </tr>
+    
+    <tr>
+        <td>Defense</td>
+        <td>@Model.Base.Defense</td>
+    </tr>
+    <tr>
+        <td>Special Attack</td>
+        <td>@Model.Base.SpAttack</td>
+    </tr>
+    <tr>
+        <td>Special Defense</td>
+        <td>@Model.Base.SpDefense</td>
+    </tr>
+</table>

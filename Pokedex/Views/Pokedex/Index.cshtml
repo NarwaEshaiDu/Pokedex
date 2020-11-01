@@ -1,0 +1,13 @@
+﻿@{ ViewBag.Title = "Pokedex";}
+@{
+    int maxPokemon = int.Parse(Configuration["MaxPokemon"]);
+}
+@{
+    for (int i = 1; i < 10; i++)
+    {
+        var url = $"/images/pokemon/{i}.png";
+        <a asp-controller="Pokedex" asp-action="Details" asp-route-id="@i"><img src="@url" /></a>
+    }
+}
+<br />
+<b>Page Generated: @ViewBag.TimeStampGenerated</b>
